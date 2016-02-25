@@ -1,16 +1,15 @@
-// polyfill webpack require.ensure
-if (typeof require.ensure !== 'function') {
-  require.ensure = (d, c) => c(require);
-}
-
 import Index from '../components/index';
-import testRoute from './test';
-// import loadTestRoute from 'bundle-loader?lazy!./test';
+import loadTestRoute from 'bundle-loader?lazy!./test';
 
 export default [
   {
     path: '/',
     component: Index,
+    getChildRoutes(location, cb) {
+      loadTestRoute(file => cb(null, [file]));
+    },
+    indexRoute: {
+      component: Index,
+    },
   },
-  testRoute,
 ];
