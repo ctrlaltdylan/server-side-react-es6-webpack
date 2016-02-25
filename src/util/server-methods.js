@@ -43,10 +43,7 @@ export function createPage(html) {
   </head>
   <body>
     <h5>~*server side edition*~</h5>
-    <div id="main">
-      <!-- the nest service catalog will be in here! -->
-      ${html}
-    </div>
+    <div id="main">${html}</div>
 
     <!-- bundle all the scripts! thanks to webpack -->
     <script type="text/javascript" src="/app.js"></script>

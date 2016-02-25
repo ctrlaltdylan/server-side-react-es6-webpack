@@ -15,7 +15,6 @@ export default {
     path: getPath('public'),
     filename: 'app.js',
     pathinfo: isDevelopment,
-    publicPath: '/public/',
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.styl'],

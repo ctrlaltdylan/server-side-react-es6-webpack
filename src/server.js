@@ -6,6 +6,7 @@ import http from 'http';
 import React from 'react';
 import {renderToString} from 'react-dom/server';
 import {match, RouterContext} from 'react-router';
+import fs from 'fs';
 import {createPage, write, writeError, writeNotFound, redirect} from './util/server-methods';
 import routes from './routes/root';
 
@@ -19,21 +20,30 @@ function renderApp(props, res) {
 
 http.createServer((req, res) => {
 
-  match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
-    if (error) {
-      writeError('ERROR!', res);
-    }
-    else if (redirectLocation) {
-      redirect(redirectLocation, res);
-    }
-    else if (renderProps) {
-      renderApp(renderProps, res);
-    }
-    else {
-      writeNotFound(res);
-    }
-  });
-
+  // serve app.js
+  if (req.url === '/app.js') {
+    fs.readFile(`./public${req.url}`, (err, data) => {
+      if (!err) {
+        write(data, 'text/javascript', res);
+      }
+    });
+  }
+  else {
+    match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
+      if (error) {
+        writeError('ERROR!', res);
+      }
+      else if (redirectLocation) {
+        redirect(redirectLocation, res);
+      }
+      else if (renderProps) {
+        renderApp(renderProps, res);
+      }
+      else {
+        writeNotFound(res);
+      }
+    });
+  }
 
 }).listen(PORT);
 console.log(`listening on port ${PORT}`);

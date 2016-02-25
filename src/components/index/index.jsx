@@ -10,6 +10,7 @@ import './styles';
 const Index = () => (
   <div>
     THIS IS THE INDEX PAGE
+    <p><a href="/test">hopefully the test page works</a></p>
   </div>
 );
 
