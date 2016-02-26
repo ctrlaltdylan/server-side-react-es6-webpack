@@ -4,7 +4,14 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, browserHistory} from 'react-router';
+import {Router, browserHistory, match} from 'react-router';
 import routes from './routes/root';
+const {pathname, search, hash} = window.location;
+const location = `${pathname}${search}${hash}`;
 
-ReactDOM.render(<Router routes={routes} history={browserHistory} />, document.querySelector('#main'));
+match({routes, location}, () => {
+  ReactDOM.render(
+    <Router routes={routes} history={browserHistory} />,
+    document.querySelector('#main')
+  );
+});

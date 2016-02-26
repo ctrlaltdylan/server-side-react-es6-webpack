@@ -8,8 +8,8 @@ import {renderToString} from 'react-dom/server';
 import {match, RouterContext} from 'react-router';
 import fs from 'fs';
 import {createPage, write, writeError, writeNotFound, redirect} from './util/server-methods';
+// const routes = [{path: '/'}, {path: 'test'}, {path: 'public/*'}];
 import routes from './routes/root';
-
 const PORT = process.env.PORT || 5000;
 
 function renderApp(props, res) {
@@ -21,7 +21,7 @@ function renderApp(props, res) {
 http.createServer((req, res) => {
 
   // serve app.js
-  if (req.url === '/app.js') {
+  if (/app.js/.test(req.url)) {
     fs.readFile(`./public${req.url}`, (err, data) => {
       if (!err) {
         write(data, 'text/javascript', res);
@@ -41,6 +41,7 @@ http.createServer((req, res) => {
       }
       else {
         writeNotFound(res);
+        console.log(routes, req.url);
       }
     });
   }
