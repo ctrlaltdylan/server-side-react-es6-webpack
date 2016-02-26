@@ -1,5 +1,5 @@
 /**
-* @file The main Nest Service application
+* @file The server side of the application
 */
 
 import http from 'http';

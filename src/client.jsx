@@ -1,5 +1,5 @@
 /**
-* @file The main Nest Service application
+* @file The client side application
 */
 
 import React from 'react';

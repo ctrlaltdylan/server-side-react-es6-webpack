@@ -1,10 +1,11 @@
 /**
-* @file app component
+* @file app component, the react app base
 * @module components/app
 * @see App
 */
 
 import React from 'react';
+import './styles';
 
 const App = ({children}) => (
   <div>

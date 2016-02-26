@@ -1,5 +1,5 @@
 /**
-* @file TestPage component
+* @file TestPage component, shows at test route
 * @module components/test-page
 * @see TestPage
 */

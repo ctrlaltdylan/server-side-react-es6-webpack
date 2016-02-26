@@ -40,10 +40,9 @@ export function createPage(html) {
   <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Nest Service Catalog: New and Improved</title>
+    <title>A React + ES6 app rendered server side</title>
   </head>
   <body>
-    <h5>~*server side edition*~</h5>
     <div id="main">${html}</div>
 
     <!-- bundle all the scripts! thanks to webpack -->

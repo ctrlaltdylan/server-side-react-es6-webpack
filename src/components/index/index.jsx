@@ -1,12 +1,11 @@
 /**
-* @file index component
+* @file index component, shows at index route
 * @module components/index
 * @see Index
 */
 
 import React from 'react';
 import {Link} from 'react-router';
-import './styles';
 
 const Index = () => (
   <div>
