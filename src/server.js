@@ -8,7 +8,6 @@ import {renderToString} from 'react-dom/server';
 import {match, RouterContext} from 'react-router';
 import fs from 'fs';
 import {createPage, write, writeError, writeNotFound, redirect} from './util/server-methods';
-// const routes = [{path: '/'}, {path: 'test'}, {path: 'public/*'}];
 import routes from './routes/root';
 const PORT = process.env.PORT || 5000;
 

@@ -5,12 +5,13 @@
 */
 
 import React from 'react';
+import {Link} from 'react-router';
 import './styles';
 
 const TestPage = () => (
   <div className="test">
     HERE IS A TEST PAGE
-    <p><a href="/">go back to the index ~*please*~</a></p>
+    <p><Link to="/">go home</Link></p>
   </div>
 );
 
