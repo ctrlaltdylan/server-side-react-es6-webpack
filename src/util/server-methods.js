@@ -14,6 +14,7 @@ export function redirect(location, res) {
 export function writeNotFound(res) {
   res.writeHead(404, {'Content-Type': 'text/html'});
   res.write('Not Found');
+  console.log('Not Found:', res);
   res.end();
 }
 

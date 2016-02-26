@@ -1,6 +1,6 @@
 import TestPage from '../components/test-page';
 
-export default {
+module.exports = {
   path: 'test',
   component: TestPage,
 };

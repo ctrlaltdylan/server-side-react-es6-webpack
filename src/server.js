@@ -40,7 +40,6 @@ http.createServer((req, res) => {
       }
       else {
         writeNotFound(res);
-        console.log(routes, req.url);
       }
     });
   }
