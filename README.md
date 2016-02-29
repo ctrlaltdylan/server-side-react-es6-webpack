@@ -1,7 +1,8 @@
-# testing server side rendering with react/webpack/node
+# server side rendering with react/es6/webpack
+## ~ * h e l l o  w o r l d * ~
 
 ```
 npm install
-npm run serverside
+npm start
 open localhost:5000
 ```
